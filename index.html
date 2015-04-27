@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>slider</title>
+<style>
+*{ margin:0; padding:0;}
+ul{ list-style:none;}
+.t{ padding-bottom:12px;}
+.st{ padding:6px 0 4px;}
+.c{ margin:0 0 30px 0;}
+pre{ padding:12px 8px; margin-bottom:30px; background-color:#EEECCC;}
+body{font-family:Arial, Helvetica, sans-serif; font-size:12px;}
+
+.clearfix{display:block}
+.clearfix:after{content:".";display:block;height:0;visibility:hidden;clear:both}
+.clearfix{zoom:1}
+	
+.wrap{width:402px; position:relative; float:left; margin:50px 20px;}
+.temp{width:400px; height:240px; margin:0 0 10px 0; overflow:hidden; border:1px solid #669966;}
+.wrap a{ float:left;}
+.wrap ul.sPagenation{ height:18px; position:absolute; bottom:-24px; left:50px; z-index:20;} 
+.wrap ul.sPagenation li { width:18px; height:18px; float:left; margin-right:2px; cursor:pointer; background:#EEE; text-align:center;}
+.wrap ul.sPagenation li.on{ background:#69f; color:#FFF;} 
+.wrap a.sPrev,.wrap a.sNext{ position:absolute; bottom:-24px; cursor:pointer; height:18px; line-height:18px;}
+.wrap a.sPrev{ left:0;}
+.wrap a.sNext{ right:0;}
+
+</style>
+<script src="http://frontend.sinaapp.com/js/jquery-1.4.2.min.js"></script>
+<script src="slider.js"></script>
+<script>
+
+$(function(){
+	
+	$("#slider1").slider({bAutoPlay:true,bPrevNext:true,bPagenation:true,pageStyle:"number",interval:4000,speed:400,direction:"upDown"});
+	
+	$("#slider2").slider({bAutoPlay:true,bPrevNext:true,bPagenation:true,pageStyle:"number",interval:1000,speed:400,direction:"leftRight"});
+	
+	$("#slider3").slider({bAutoPlay:true,bPrevNext:true,bPagenation:true,pageStyle:"number",interval:3000,speed:400,direction:"leftRight"});
+
+	
+});
+</script>
+</head>
+
+<body>
+<h4 class="t">左右上下滚动幻灯片效果插件</h4>
+<p class="st">演示效果：</p>
+<div class="c">
+<!------------------------------->
+<div class="clearfix">
+<div class="wrap">
+    <div id="slider1" class="temp">
+        <img src="banner/1.jpg" width="400" height="240" border="0">
+        <img src="banner/2.jpg" width="400" height="240" border="0">
+        <img src="banner/3.jpg" width="400" height="240" border="0">
+        <img src="banner/4.jpg" width="400" height="240" border="0">
+        <img src="banner/5.jpg" width="400" height="240" border="0">
+        <img src="banner/6.jpg" width="400" height="240" border="0">
+    </div>
+</div>
+
+<div class="wrap">
+    <div id="slider2" class="temp">
+        <img src="banner/1.jpg" width="400" height="240" border="0">
+        <img src="banner/2.jpg" width="400" height="240" border="0">
+        <img src="banner/3.jpg" width="400" height="240" border="0">
+        <img src="banner/4.jpg" width="400" height="240" border="0">
+        <img src="banner/5.jpg" width="400" height="240" border="0">
+        <img src="banner/6.jpg" width="400" height="240" border="0">
+    </div>
+</div>
+
+<div class="wrap">
+    <div id="slider3" class="temp">
+        <img src="banner/1.jpg" width="400" height="240" border="0">
+        <img src="banner/2.jpg" width="400" height="240" border="0">
+        <img src="banner/3.jpg" width="400" height="240" border="0">
+    </div>
+</div>
+</div>
+<!------------------------------->
+</div>
+<p class="st">使用方法：</p>
+<pre>
+<code>$("seletor").slider({</code>
+    <code>bAutoPlay:boolean, // 是否自动播放 默认为true</code>	
+    <code>interval:4000 // 两个张图播放的间隔时间以毫秒为单位，默认为4000"</code>
+    <code>bPrevNext:boolean, // 是否显示页脚</code>
+    <code>direction:"upDown or leftRight" // 动画方向</code>
+    <code>bPagenation:boolean, // 设置是否显示页脚</code>
+    <code>pageStyle:"number or icon" // 页脚展现效果可以数字，也可以是图形，默认为数字</code>
+    <code>speed:400 // 动画时间以毫秒为单位，默认400</code>
+    <code>direction:"upDown or leftRight" // 滚动方向 上下 或 左右 slider1.1新加此功能</code>
+<code>})</code>
+</pre>
+</div>
+</body>
+</html>
